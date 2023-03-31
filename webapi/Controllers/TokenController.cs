@@ -1,4 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Azure.Identity;
+using Azure.ResourceManager;
+using Azure.Core;
+using Azure.ResourceManager.Storage;
 
 namespace webapi;
 
@@ -17,6 +21,9 @@ public class TokenController : ControllerBase
   [HttpPost(Name = "RenewToken")]
   public TokenResponse Post()
   {
+
+    new BlobUtils().GenerateToken();
+
     return new TokenResponse
     {
       Token = "token"
