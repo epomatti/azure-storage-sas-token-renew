@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace webapi;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class TokenController : ControllerBase
 {
 
@@ -14,8 +14,8 @@ public class TokenController : ControllerBase
     _logger = logger;
   }
 
-  [HttpGet(Name = "GetWeatherForecast")]
-  public TokenResponse Get()
+  [HttpPost(Name = "RenewToken")]
+  public TokenResponse Post()
   {
     return new TokenResponse
     {
