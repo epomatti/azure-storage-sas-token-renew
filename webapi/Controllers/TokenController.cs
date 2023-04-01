@@ -16,7 +16,12 @@ public class TokenController : ControllerBase
   [HttpPost]
   public IActionResult Post(TokenRequest request)
   {
-    var token = _tokenService.GenerateToken();
+    DateTime expirationDate = (DateTime) request.ExpirationDate!;
+    bool valid = expirationDate - DateTime.Now > TimeSpan.FromHours(2);
+    if(!valid) {
+      return BadRequest("Date must be a future date.");
+    }
+    var token = _tokenService.GenerateToken(request.StorageAccountName, request.BlobContainerName, (DateTime)request.ExpirationDate!);
     var response = new TokenResponse
     {
       Token = token

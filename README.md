@@ -5,7 +5,7 @@ https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet?
 
 ```
 az group create -n rgsas -l eastus
-az storage account create -n stsasmgmt789 -g rgsas -l eastus --sku Standard_LRS --allow-blob-public-access
+az storage account create -n stsasmgmt789 -g rgsas -l eastus --sku Standard_LRS --allow-blob-public-access true
 az storage container create -n companyfiles --account-name stsasmgmt789
 ```
 

@@ -5,8 +5,8 @@ public class ConfigService
 
   public AccessKeyOperationMode accessKeyOperationMode { get; set; } = AccessKeyOperationMode.StorageAccount;
   public string DefaultAccessKey { get; set; } = "key1";
-  public string? AccessKey1 { get; set; }
-  public string? AccessKey2 { get; set; }
+  public string AccessKey1 { get; set; } = "";
+  public string AccessKey2 { get; set; } = "";
 
   public ConfigService()
   {
@@ -44,8 +44,8 @@ public class ConfigService
 
   protected void _AccessKeys()
   {
-    this.AccessKey1 = Environment.GetEnvironmentVariable("ACCESS_KEY_1");
-    this.AccessKey2 = Environment.GetEnvironmentVariable("ACCESS_KEY_2");
+    this.AccessKey1 = Environment.GetEnvironmentVariable("ACCESS_KEY_1")!;
+    this.AccessKey2 = Environment.GetEnvironmentVariable("ACCESS_KEY_2")!;
   }
 
 }

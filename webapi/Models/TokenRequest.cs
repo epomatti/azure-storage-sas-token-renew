@@ -5,9 +5,9 @@ namespace webapi;
 public class TokenRequest
 {
   [Required]
-  public string? StorageAccountName { get; set; }
+  public string StorageAccountName { get; set; } = "";
   [Required]
-  public string? BlobContainerName { get; set; }
+  public string BlobContainerName { get; set; } = "";
   [Required]
-  public DateOnly? ExpirationDate { get; set; }
+  public DateTime? ExpirationDate { get; set; }
 }
