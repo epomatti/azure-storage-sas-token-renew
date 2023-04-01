@@ -1,6 +1,6 @@
 # Azure Storage Blob SAS token
 
-Implementation of the example [code](https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet?tabs=dotnet) for generating SAS tokens to access Blob storage containers.
+Implementation of the [example code](https://learn.microsoft.com/en-us/azure/storage/blobs/sas-service-create-dotnet?tabs=dotnet) for generating SAS tokens to access Blob storage containers.
 
 Start by creating the storage account with a container:
 
@@ -30,8 +30,8 @@ Send a POST request to `http://localhost:5224/api/token` with the sample body:
 
 ```json
 {
-	"storageAccountName": "stsasmgmt789",
-	"blobContainerName": "companyfiles",
-	"expirationDate": "2030-12-21"
+  "storageAccountName": "stsasmgmt789",
+  "blobContainerName": "companyfiles",
+  "expirationDate": "2030-12-21"
 }
 ```
