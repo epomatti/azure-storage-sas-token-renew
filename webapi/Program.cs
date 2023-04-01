@@ -2,8 +2,11 @@ using webapi;
 
 var builder = WebApplication.CreateBuilder(args);
 
+DotNetEnv.Env.Load();
+
 // Add services to the container.
 builder.Services.AddScoped<TokenService>();
+builder.Services.AddSingleton<ConfigService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
